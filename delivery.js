@@ -33,6 +33,7 @@ function render(data) {
       <td>${d.mid}</td>
       <td>${d.material}</td>
       <td>${d.bin}</td>
+      <td>${d.defect}</td>
       <td>${d.net}</td>
       <td>${d.tanggalDelivery}</td>
     </tr>`;
