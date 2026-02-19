@@ -21,6 +21,7 @@ simpan.onclick = () => {
     mid: mid.value,
     material: material.value,
     bin: bin.value,
+    defect : defect.value,
     net: net.value,
     tanggalInput: new Date().toLocaleString(),
     tanggalDelivery: "",
@@ -53,6 +54,7 @@ function render(data) {
       <td class="bin">${d.bin}</td>
       <td class="net">${d.net}</td>
       <td>${d.tanggalInput}</td>
+        <td class="defect">${d.defect}</td>
       <td>${d.tanggalDelivery || "-"}</td>
       <td>
         <button class="btn btn-warning btn-sm" onclick="editRow(this)">Edit</button>
