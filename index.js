@@ -52,9 +52,9 @@ function render(data) {
       <td class="mid">${d.mid}</td>
       <td class="material">${d.material}</td>
       <td class="bin">${d.bin}</td>
+       <td class="defect">${d.defect}</td>
       <td class="net">${d.net}</td>
       <td>${d.tanggalInput}</td>
-        <td class="defect">${d.defect}</td>
       <td>${d.tanggalDelivery || "-"}</td>
       <td>
         <button class="btn btn-warning btn-sm" onclick="editRow(this)">Edit</button>
