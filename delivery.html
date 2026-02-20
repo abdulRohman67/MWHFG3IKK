@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Berita IKk</title>
+
+    <!-- bootstrap 5 css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- boxicons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- excel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Side Navbar -->
+    <div
+      class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column"
+      id="sidebar"
+    >
+      <ul class="nav flex-column text-white w-100">
+        <a class="nav-link h6 text-white">PT INDAH KIAT KARAWANG</a>
+        <li class="nav-item">
+          <a href="home.html" class="nav-link text-white">Input Data</a>
+        </li>
+        <li class="nav-item">
+          <a href="delivery.html" class="nav-link text-white">Data Delivery</a>
+        </li>
+        <li class="nav-item">
+          <a href="index.html" class="nav-link text-white">Logout</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main -->
+    <div class="p-1 my-container active-cont">
+      <!-- Top Nav -->
+      <nav class="navbar bg-light px-3">
+        <button class="btn" id="menu-btn">
+          <i class="bx bx-menu"></i>
+        </button>
+        <b>Aplikasi MWH</b>
+        <p>Selamat Datang : <strong id="namaUser"></strong></p>
+      </nav>
+
+      <!-- Content -->
+      <div class="content-wrapper">
+        <h3 class="text-dark mb-4">DATA DELIVERY</h3>
+     
+        <div class="row g-2 mb-2">
+          <div class="col">
+            <br>  <input type="date"  id="tglReturn"  class="form-control">
+             </div>
+     
+          
+          <!-- INPUT TANGGAL RETURN (WAJIB) -->
+          <div class="col-6">
+          <br>  <button class="btn btn-danger" id="returnData">Return</button>
+            <button class="btn btn-success" onclick="downloadExcel()">Download Excel</button>
+          </div>
+          
+          <h6>Search Data</h6>
+<div class="row g-2 mb-2">
+  <div class="col"><input id="searchId" class="form-control" placeholder="Cari ID"></div>
+  <div class="col-3"><input type="date" id="searchDate" class="form-control"></div>
+  <div class="col">
+  <input id="searchMaterial" class="form-control" placeholder="Cari Material"><br>
+  <div>  <button id="cari1" class="btn btn-primary w-100">Cari</button>
+</div>
+</div><hr>
+          
+
+        </div>
+
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th><input type="checkbox" id="checkAll"></th>
+              <th>ID</th>
+              <th>Material</th>
+              <th>Bin</th>
+              <th>Lokasi</th>
+              <th>Defect</th>
+              <th>Net</th>
+              <th>Tgl Input</th>
+              <th>Tgl Delivery</th>
+               <th>Op delivery</th>
+            </tr>
+          </thead>
+          <tbody id="listData"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- sidebar toggle -->
+    <script>
+      document.getElementById("menu-btn").onclick = () => {
+        document.getElementById("sidebar").classList.toggle("active-nav");
+        document.querySelector(".my-container").classList.toggle("active-cont");
+      };
+
+      // cek login
+      if (localStorage.getItem("login") !== "true") {
+        window.location.href = "index.html";
+      }
+
+      document.getElementById("namaUser").innerText =
+        localStorage.getItem("nama") ?? "-";
+
+        document.getElementById("operator1").value = localStorage.getItem("nama") ?? "-";
+        document.getElementById("operator2").value = localStorage.getItem("nama") ?? "-";
+    </script>
+
+    <!-- JS -->
+    <script type="module" src="delivery.js"></script>
+<script type="module" src="login.js"></script>
+<script type="module" src="home.js"></script>
+    
+  </body>
+</html>
