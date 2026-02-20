@@ -62,19 +62,18 @@
         <div class="row g-2 mb-2">
           <div class="col">
             <input id="searchId" class="form-control" placeholder="Cari ID Material">
-          <br>  <input type="date" id="searchDate" class="form-control">
+          <br>  <input type="date"  id="tglReturn"  class="form-control">
           </div>
      
+          
           <!-- INPUT TANGGAL RETURN (WAJIB) -->
-          <div class="col-3">
-            <input type="date" id="tglReturn" class="form-control"> 
-          </div>
-
-          <div class="col-auto">
-            <!-- BUTTON DENGAN ID -->
-            <button class="btn btn-danger" id="returnData">Return</button>
+          <div class="col-6">
+            <input type="date"id="searchDate" class="form-control"> 
+          <br>  <button class="btn btn-danger" id="returnData">Return</button>
             <button class="btn btn-success" onclick="downloadExcel()">Download Excel</button>
           </div>
+
+          
         </div>
 
         <table class="table table-bordered table-striped">
