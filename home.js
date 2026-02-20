@@ -165,7 +165,7 @@ window.batalEdit = btn => {
 /* ============================= BIN → LOKASI EDIT ============================ */
 function lokasiEdit(bin, selected) {
   let html = `<select class="form-select form-select-sm">`;
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 1; i <= 20; i++) {
     const v = bin + i;
     html += `<option ${v===selected?"selected":""}>${v}</option>`;
   }
@@ -213,3 +213,4 @@ checkAll.onclick = () => {
   document.querySelectorAll(".pilih")
     .forEach(c => c.checked = checkAll.checked);
 };
+
