@@ -127,7 +127,7 @@ window.editRow = btn => {
     lokasiTd.dataset.old = lokasiTd.innerText;
 
     binTd.innerHTML = `<select class="form-select form-select-sm bin-edit" onchange="ubahLokasiEdit(this)">
-      ${["A","B","C","D","E","F","G","H","I"].map(b => `<option ${b===binTd.dataset.old?"selected":""}>${b}</option>`).join("")}
+      ${["A","B","C","D","E","F","G","H","I","J","K","L"].map(b => `<option ${b===binTd.dataset.old?"selected":""}>${b}</option>`).join("")}
     </select>`;
 
     lokasiTd.innerHTML = lokasiEdit(binTd.dataset.old, lokasiTd.dataset.old);
@@ -213,5 +213,3 @@ checkAll.onclick = () => {
   document.querySelectorAll(".pilih")
     .forEach(c => c.checked = checkAll.checked);
 };
-
-
