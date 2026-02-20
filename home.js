@@ -250,4 +250,35 @@ window.kirimDelivery = () => {
   checkAll.checked = false;
 
   operator1.value = sessionStorage.getItem("namaLogin"); // contoh
+
+};
+
+window.downloadExcel = () => {
+  if (stockData.length === 0) {
+    alert("Tidak ada data untuk di-download");
+    return;
+  }
+
+  // Buat array data untuk XLSX dari semua stockData
+  const wsData = stockData.map(d => ({
+    ID: d.mid,
+    Material: d.material,
+    Bin: d.bin,
+    Lokasi: d.lokasi,
+    Defect: d.defect,
+    Net: d.net,
+    "Tanggal Input": d.tanggalInput,
+    "Tanggal Delivery": d.tanggalDelivery || "-",
+    "Tanggal Return": d.tanggalReturn || "-",
+    "Operator Input": d.operator1 || "-",
+    "NO DN": d.dn
+  }));
+
+  // Buat worksheet dan workbook
+  const ws = XLSX.utils.json_to_sheet(wsData);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Data MWH");
+
+  // Unduh file Excel dengan nama termasuk tanggal hari ini
+  XLSX.writeFile(wb, `Data_MWH_${new Date().toISOString().slice(0,10)}.xlsx`);
 };
