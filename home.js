@@ -20,6 +20,11 @@ const checkAll = document.getElementById("checkAll");
 const tglDelivery = document.getElementById("tglDelivery");
 const loading = document.getElementById("loading");
 
+const mid = document.getElementById("mid");
+const material = document.getElementById("material");
+const defect = document.getElementById("defect");
+const net = document.getElementById("net");
+
 /* ============================= BIN → LOKASI ============================ */
 bin.addEventListener("change", () => {
   lokasi.innerHTML = `<option value="">Pilih Lokasi</option>`;
@@ -69,12 +74,12 @@ onValue(dataRef, snap => {
   stockData = [];
   snap.forEach(c => {
     const d = c.val();
-    if (d.status === "stock" || d.status === "delivery") {
+    if (d.status === "stock") { // hanya data stock muncul di home
       stockData.push({ id: c.key, ...d });
     }
   });
   render(stockData);
-  showLoading(false); // sembunyikan loading setelah data dimuat
+  showLoading(false);
 });
 
 /* ============================= RENDER TABLE ============================ */
@@ -204,6 +209,7 @@ window.kirimDelivery = () => {
     });
   });
 
+  // bersihkan input & checkbox
   tglDelivery.value = "";
   checkAll.checked = false;
 };
