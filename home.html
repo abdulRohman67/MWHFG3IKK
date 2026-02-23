@@ -105,12 +105,6 @@
   </div>
 </div>
 
-<!-- LOADING -->
-<div id="loading" class="text-center my-4" style="display:none;">
-  <div class="spinner-border text-primary"></div>
-  <p class="mt-2">Memuat data...</p>
-</div>
-
 <!-- TABLE -->
 <table class="table table-bordered table-striped">
   <thead class="table-dark">
@@ -133,6 +127,11 @@
   <tbody id="listData"></tbody>
 </table>
 
+</div>
+<!-- LOADING -->
+<div id="loading" class="text-center my-4" style="display:none;">
+  <div class="spinner-border text-primary"></div>
+  <p class="mt-2">Memuat data...</p>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -161,3 +160,4 @@ document.getElementById("operator1").value = localStorage.getItem("nama") ?? "-"
 
 </body>
 </html>
+
