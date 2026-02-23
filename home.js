@@ -140,7 +140,7 @@ function render(data) {
         <td class="dn">${d.dn}</td>
         <td>
           <button class="btn btn-warning btn-sm" onclick="editRow(this)">Edit</button>
-          <button class="btn btn-danger btn-sm" onclick="hapus('${d.id}')">Hapus</button>
+          <button class="btn btn-danger btn-sm" onclick="hapus('${d.idnonaktif}')">Hapus</button>
           <button class="btn btn-secondary btn-sm" onclick="batalEdit(this)">Batal</button>
         </td>
       </tr>`;
@@ -232,7 +232,7 @@ window.ubahLokasiEdit = sel => {
 
 /* ============================= DELETE ============================ */
 window.hapus = id => {
-  if (confirm("Hapus data ini?")) {
+  if (confirm("Maaf Hapus data ini di Non aktifkan")) {
     remove(ref(db, "materials/" + id));
   }
 };
@@ -336,4 +336,5 @@ btnCari.addEventListener("click", () => {
   });
 
   render(filtered);
+
 });
