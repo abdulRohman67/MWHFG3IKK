@@ -3,12 +3,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/fireba
 import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDiW7rFa4YUCmT-sOpffx3iVamfmlCxZxE",
-    authDomain: "akunmwh.firebaseapp.com",
-    projectId: "akunmwh",
-    storageBucket: "akunmwh.firebasestorage.app",
-    messagingSenderId: "953097983724",
-    appId: "1:953097983724:web:d1f8701e7346411234b7c9"
+ apiKey: "AIzaSyBKc-SQsKpkLsrIdqQFIqqQwLI0j7KTCmc",
+    authDomain: "mwh-akun.firebaseapp.com",
+    projectId: "mwh-akun",
+    storageBucket: "mwh-akun.firebasestorage.app",
+    messagingSenderId: "805938654734",
+    appId: "1:805938654734:web:1f59bd54c93970ac04965f"
 };
 
 const app = initializeApp(firebaseConfig);
