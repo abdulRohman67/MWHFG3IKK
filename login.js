@@ -1,15 +1,14 @@
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
-import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
+import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD8CF5ruXc7AxoGPOx3kmqSSI_1FFWMkrk",
-  authDomain: "mwkikkfg.firebaseapp.com",
-  databaseURL: "https://mwkikkfg-default-rtdb.firebaseio.com",
-  projectId: "mwkikkfg",
-  storageBucket: "mwkikkfg.firebasestorage.app",
-  messagingSenderId: "181739820908",
-  appId: "1:181739820908:web:fdc9c25ce49430053dc549"
+  apiKey: "AIzaSyDiW7rFa4YUCmT-sOpffx3iVamfmlCxZxE",
+    authDomain: "akunmwh.firebaseapp.com",
+    projectId: "akunmwh",
+    storageBucket: "akunmwh.firebasestorage.app",
+    messagingSenderId: "953097983724",
+    appId: "1:953097983724:web:d1f8701e7346411234b7c9"
 };
 
 const app = initializeApp(firebaseConfig);
