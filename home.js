@@ -102,21 +102,7 @@ onValue(dataRef, snap => {
 
 function hitungTotalNet(data) {
   const total = data.reduce((sum, item) => {
-    let net = item.net;
-
-    // Hilangkan koma jika ada format 1,000
-    if (typeof net === "string") {
-      net = net.replace(/,/g, "");
-    }
-
-    net = parseFloat(net);
-
-    // Jika bukan angka, jadikan 0
-    if (isNaN(net)) {
-      net = 0;
-    }
-
-    return sum + net;
+    return sum + (parseFloat(item.net) || 0);
   }, 0);
 
   const existingTotalRow = listData.querySelector(".total-net-row");
@@ -126,8 +112,12 @@ function hitungTotalNet(data) {
   tr.className = "total-net-row text-bold";
 
   tr.innerHTML = `
-    <td colspan="6" class="text-end"><strong>Total Net</strong></td>
-    <td><strong>${total}</strong></td>
+    <td colspan="6" class="text-end">
+      <strong>Total Net</strong>
+    </td>
+    <td>
+      <strong>${total}</strong>
+    </td>
     <td colspan="6"></td>
   `;
 
